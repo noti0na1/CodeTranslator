@@ -113,18 +113,18 @@ ts s = let (ss, _) = trans s 0 in printElements ss
 
 -- examples
 
-s0 = [Exp "int i = 0", Exp "++i", Exp "print i"]
+s0 = [Exp "int i = 0", Exp "++i", Exp "printf(\"%d\\n\", i)"]
 
 s1 = [Exp "int i = 0", 
-    If "i == 0" [Exp "print j + 1"] []]
+    If "i == 0" [Exp "printf(\"%d\\n\", j + 1)"] []]
 
 s2 = [Exp "int i = 0", 
     While "i < 100" 
-       [Exp "print i",
+       [Exp "printf(\"%d\\n\", i)",
         If "i == 66" [Break] [], 
         Exp "++i"]]
 
-s3 = [Exp "int i = 0", Do [Exp "++i", If "i % 2 == 0" [Conti] [], Exp "print i"] "i < 100"]
+s3 = [Exp "int i = 0", Do [Exp "++i", If "i % 2 == 0" [Conti] [], Exp "printf(\"%d\\n\", i)"] "i < 100"]
 
 s4 = [Exp "int i = 0", 
     Switch "i" 
