@@ -1,9 +1,13 @@
 # Code Translator
 A Code Translator for C8, CS146.
 
-This translate converts loops or ifs into labels, goto and simple ifs. All code and examples are in `trans.hs`.
+This translate converts loops or ifs into labels, goto and simple ifs. All code and examples are in `translate.hs`.
 
-`ghci trans.hs` to run it.
+`ghci translate.hs` to run it.
+
+## Updated
+
+Rewritten using Monad, the old version is `trans-old.hs`.
 
 ## Examples:
 
